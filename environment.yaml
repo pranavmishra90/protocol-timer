@@ -1,0 +1,8 @@
+name: timer
+channels: 
+  - conda-forge
+dependencies:
+  - python=3.11.4
+  - IPython=8.14.0
+  - pandas=2.0.2
+  - tqdm=4.65.0
