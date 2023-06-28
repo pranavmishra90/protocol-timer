@@ -9,7 +9,9 @@ The protocol timer (and this repository) works using python. To run the timer's 
 ### Create it locally
 Using `conda` / `mamba`, create a python environment locally to a folder `env/`
 
-`mamba env create --prefix ./env -f ./environment.yaml`
+````sh
+mamba env create --prefix ./env -f ./environment.yaml
+````
 
 You can substitute other conda-like commands for `mamba`, including `conda`, `micromamba`, etc.
 
