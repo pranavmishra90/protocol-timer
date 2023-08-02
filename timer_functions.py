@@ -87,7 +87,7 @@ def countdown(timestring, step_text):
 
     pbar.refresh()
     display(f"COMPLETED {step_text}")
-    send_discord_message(f"COMPLETED {step_text} in {step_text}")
+    send_discord_message(f"COMPLETED {step_text}")
     
 def send_discord_message(content):
     payload = {

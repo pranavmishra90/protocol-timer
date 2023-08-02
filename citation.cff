@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: Protocol Timer
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file
+type: software
+authors:
+  - given-names: Pranav Kumar
+    family-names: Mishra
+    email: pranav_k_mishra@rush.edu
+    name-particle: Pranav
+    affiliation: Rush University
+    orcid: 'https://orcid.org/0000-0001-5219-6269'
+repository-code: 'https://github.com/pranavmishra90/protocol-timer'
+url: >-
+  https://www.drpranavmishra.com/research/2023/protocol-timer
+license: MIT
