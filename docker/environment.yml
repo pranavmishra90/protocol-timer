@@ -6,6 +6,7 @@ dependencies:
   - IPython=8.14.0
   - ipykernel=6.23.3
   - ipywidgets=8.0
+  - nb_conda_kernels
   - pandas=2.0.2
   - tqdm=4.65.0
   - discord.py=2.3.1

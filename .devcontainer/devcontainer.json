@@ -1,0 +1,16 @@
+{
+    "image": "pranavmishra90/singulab",
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"mechatroner.rainbow-csv",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-powertoys"
+			]
+        }        
+    },
+    "postAttachCommand": ["mamba env create --prefix ./env -f ./environment.yml", "mamba activate ./env"]
+}
