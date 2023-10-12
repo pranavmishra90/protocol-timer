@@ -1,3 +1,4 @@
 {
-	"python.defaultInterpreterPath": "./env"
+	"python.defaultInterpreterPath": "./env",
+	"git.ignoreLimitWarning": true
 }
