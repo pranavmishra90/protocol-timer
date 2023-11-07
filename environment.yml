@@ -11,3 +11,4 @@ dependencies:
   - requests=2.31.0
   - time=1.8
   - configparser=5.3
+  - markdown=3.5
