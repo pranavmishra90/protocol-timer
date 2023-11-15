@@ -8,5 +8,7 @@ dependencies:
   - ipywidgets=8.0
   - pandas=2.0.2
   - tqdm=4.65.0
-  - discord.py=2.3.1
   - requests=2.31.0
+  - time=1.8
+  - configparser=5.3
+  - markdown=3.5
