@@ -1,16 +1,32 @@
 {
     "image": "pranavmishra90/singulab",
+    "name": "protocol-timer",
+    "hostRequirements": {
+        "cpus": 1,
+        "memory": "2gb",
+        "storage": "10gb"
+    },
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
 				"ms-vscode-remote.vscode-remote-extensionpack",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "ms-python.black-formatter",
 				"mechatroner.rainbow-csv",
+                "janisdd.vscode-edit-csv",
+                "ms-python.python",
 				"ms-toolsai.jupyter",
 				"ms-toolsai.vscode-jupyter-powertoys"
 			]
         }        
     },
-    "postAttachCommand": ["mamba env create --prefix ./env -f ./environment.yml", "mamba activate ./env"]
+    "shutdownAction": "none",
+    // "onCreateCommand": ["mamba env update --prefix ./env -f ./environment.yml"],
+    "postAttachCommand": {
+        "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
+      }
 }
