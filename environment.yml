@@ -12,3 +12,4 @@ dependencies:
   - time=1.8
   - configparser=5.3
   - markdown=3.5
+  - papermill=2.5
