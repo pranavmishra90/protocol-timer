@@ -1,5 +1,5 @@
 {
-    "image": "pranavmishra90/singulab",
+    "image": "pranavmishra90/facsimilab-vscoder-cpu",
     "name": "protocol-timer",
     "hostRequirements": {
         "cpus": 1,
