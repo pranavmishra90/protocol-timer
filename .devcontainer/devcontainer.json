@@ -40,10 +40,11 @@
     },
     "shutdownAction": "none",
     "postCreateCommand": [
-        "/bin/bash",
-        "/usr/bin/micromamba env create --prefix /workspaces/protocol-timer/env -f /workspaces/protocol-timer/environment.yml"
+        "/bin/bash"
     ],
     "postAttachCommand": {
+        "server": "/usr/bin/micromamba env create --prefix /workspaces/protocol-timer/env -f /workspaces/protocol-timer/environment.yml",
         "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
+        
     }
 }
