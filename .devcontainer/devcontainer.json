@@ -6,27 +6,40 @@
         "memory": "2gb",
         "storage": "10gb"
     },
+    "secrets": {
+        "matrix_webhook": {
+            "description": "The webhook url for the matrix server",
+        },
+        "discord_webhook_url": {
+            "description": "The discord URL for the webhook"
+        },
+        "discord_channel_id": {
+            "description": "The discord channel ID"
+        }
+    }
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
-				"ms-vscode-remote.vscode-remote-extensionpack",
+                "ms-vscode-remote.vscode-remote-extensionpack",
                 "ms-azuretools.vscode-docker",
                 "eamodio.gitlens",
                 "esbenp.prettier-vscode",
                 "ms-python.black-formatter",
-				"mechatroner.rainbow-csv",
+                "mechatroner.rainbow-csv",
                 "janisdd.vscode-edit-csv",
                 "ms-python.python",
-				"ms-toolsai.jupyter",
-				"ms-toolsai.vscode-jupyter-powertoys"
-			]
-        }        
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-powertoys"
+            ]
+        }
     },
     "shutdownAction": "none",
-    "postCreateCommand": ["micromamba env create --prefix ./env -f ./environment.yml"],
+    "postCreateCommand": [
+        "micromamba env create --prefix ./env -f ./environment.yml"
+    ],
     "postAttachCommand": {
         "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
-      }
+    }
 }
