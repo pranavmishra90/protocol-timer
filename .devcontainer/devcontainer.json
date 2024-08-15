@@ -1,5 +1,5 @@
 {
-    "image": "pranavmishra90/facsimilab-vscoder-cpu",
+    "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "hostRequirements": {
         "cpus": 1,
@@ -25,7 +25,7 @@
         }        
     },
     "shutdownAction": "none",
-    // "onCreateCommand": ["mamba env update --prefix ./env -f ./environment.yml"],
+    "postCreateCommand": ["micromamba env create --prefix ./env -f ./environment.yml"],
     "postAttachCommand": {
         "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
       }
