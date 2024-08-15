@@ -1,6 +1,12 @@
 {
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
+    "containerUser": "coder",
+    "workspaceFolder": "/home/coder/work",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/coder/work,type=bind,consistency=cached"
+    ],
+    "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
         "memory": "2gb",
@@ -16,7 +22,7 @@
         "discord_channel_id": {
             "description": "The discord channel ID"
         }
-    }
+    },
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
@@ -37,7 +43,8 @@
     },
     "shutdownAction": "none",
     "postCreateCommand": [
-        "micromamba env create --prefix ./env -f ./environment.yml"
+        "/bin/bash",
+        "/usr/bin/micromamba env create --prefix /home/coder/work/env -f ./environment.yml"
     ],
     "postAttachCommand": {
         "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
