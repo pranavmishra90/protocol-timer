@@ -14,7 +14,7 @@
     },
     "secrets": {
         "matrix_webhook": {
-            "description": "The webhook url for the matrix server",
+            "description": "The webhook url for the matrix server"
         },
         "discord_webhook_url": {
             "description": "The discord URL for the webhook"
