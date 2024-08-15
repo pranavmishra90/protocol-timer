@@ -2,7 +2,7 @@
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "containerUser": "coder",
-    "workspaceFolder": ["/workspaces", "/home/coder/work",],
+    "workspaceFolder": ["/workspaces", "/home/coder/work"],
     "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
@@ -41,7 +41,7 @@
     "shutdownAction": "none",
     "postCreateCommand": [
         "/bin/bash",
-        "/usr/bin/micromamba env create --prefix /home/coder/work/env -f ./environment.yml"
+        "/usr/bin/micromamba env create --prefix /workspaces/protocol-timer/env -f /workspaces/protocol-timer/environment.yml"
     ],
     "postAttachCommand": {
         "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
