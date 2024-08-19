@@ -1,0 +1,13 @@
+name: FFPE Protocol
+
+on:
+  workflow_dispatch:
+jobs:
+  build-test-and-push:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run the FFPE Protocol with papermill
+        run: |
+          /opt/conda/bin/papermill protocols/histology/FFPE.ipynb /tmp/FFPE-run.ipynb
