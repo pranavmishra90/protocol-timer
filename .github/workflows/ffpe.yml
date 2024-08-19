@@ -11,7 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: PWD
+        run: pwd
+
+      - name: Workspace variable
+        run: echo "$GITHUB_WORKSPACE"
       
       - name: Run the FFPE Protocol with papermill
         run: |
-          /opt/conda/bin/papermill protocols/histology/FFPE.ipynb /tmp/FFPE-run.ipynb
+            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill protocols/histology/FFPE.ipynb /tmp/FFPE-run.ipynb
