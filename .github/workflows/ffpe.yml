@@ -7,7 +7,7 @@ on:
       - main
     
 jobs:
-  build-test-and-push:
+  protocol-timer-test:
 
     runs-on: ubuntu-latest
     
@@ -28,6 +28,7 @@ jobs:
         if: steps.cache-docker.outputs.cache-hit != 'true'
         run: |
           mkdir -p /tmp/.docker-cache
+          mkdir -p ./papermill/output
           docker load --input /tmp/.docker-cache/image.tar || true
 
       - name: Pull Docker image
