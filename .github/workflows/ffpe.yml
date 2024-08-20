@@ -1,13 +1,37 @@
-name: FFPE Protocol
+name: Testing Protocol Timer
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+    
 jobs:
-  build-test-and-push:
+  protocol-timer-test:
+
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Pull Docker image
+        run: docker pull pranavmishra90/facsimilab-main:latest
+
+      - name: PWD
+        run: pwd
+
+      - name: Workspace variable
+        run: echo "$GITHUB_WORKSPACE"
       
       - name: Run the FFPE Protocol with papermill
         run: |
-          /opt/conda/bin/papermill protocols/histology/FFPE.ipynb /tmp/FFPE-run.ipynb
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=$MATRIX_WEBHOOK -e TEST_WEBHOOK=$TEST_WEBHOOK pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
+
+      - name: Write to workflow job summary
+        run: |
+            header="# Protocol Timer Testing "
+            echo "$header" > test/job_summary.md
+            echo "Check the [outgoing webhooks](https://webhook.site/#!/view/5e2673f1-175c-45fc-a195-f0505e97d0b6/eae09074-c0c8-4835-bcdb-f365b4af6022/1)" >> test/job_summary.md
+            cat test/job_summary.md >> $GITHUB_STEP_SUMMARY

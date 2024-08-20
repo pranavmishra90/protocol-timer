@@ -2,6 +2,7 @@
 
 A timer designed to follow along the steps of a laboratory protocol and provide notifications when it's time for the next step
 
+[![Protocol Timer - Test](https://github.com/pranavmishra90/protocol-timer/actions/workflows/ffpe.yml/badge.svg)](https://github.com/pranavmishra90/protocol-timer/actions/workflows/ffpe.yml)
 
 ## Python Enviroment
 The protocol timer (and this repository) works using python. To run the timer's notebook, you will need to have a python environment ready. For convenience, I have described the way to create an isolated python "environment" just for this timer. 
