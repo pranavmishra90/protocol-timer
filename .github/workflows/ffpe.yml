@@ -19,8 +19,12 @@ jobs:
       - name: Pull Docker image
         run: docker pull pranavmishra90/facsimilab-main:latest
 
-      - name: PWD
-        run: pwd
+      - name: Pass github secrets in as environment variables
+        uses: oNaiPs/secrets-to-env-action@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
+      
+      - run: echo "Value of TEST_WEBHOOK: $TEST_WEBHOOK"
 
       - name: Workspace variable
         run: echo "$GITHUB_WORKSPACE"
@@ -33,5 +37,5 @@ jobs:
         run: |
             header="# Protocol Timer Testing "
             echo "$header" > test/job_summary.md
-            echo "Check the [outgoing webhooks](https://webhook.site/#!/view/5e2673f1-175c-45fc-a195-f0505e97d0b6/eae09074-c0c8-4835-bcdb-f365b4af6022/1)" >> test/job_summary.md
+            echo "Check the [outgoing webhooks](https://webhook.drpranavmishra.com/#!/21adb3bf-8f2b-47d2-9fcc-674451e5e4cd/93753230-4e74-4922-96e1-4097fae1fbba/1)" >> test/job_summary.md
             cat test/job_summary.md >> $GITHUB_STEP_SUMMARY
