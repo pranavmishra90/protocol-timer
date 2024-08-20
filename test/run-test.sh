@@ -15,7 +15,7 @@ channel_id=1234567890_your_channel_id_number_here
 
 [matrix]
 
-webhook=https://webhook.site/5e2673f1-175c-45fc-a195-f0505e97d0b6
+webhook=https://webhook.drpranavmishra.com/21adb3bf-8f2b-47d2-9fcc-674451e5e4cd
 EOL
 
 echo "File $FILE created successfully."
