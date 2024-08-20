@@ -27,4 +27,4 @@ jobs:
       
       - name: Run the FFPE Protocol with papermill
         run: |
-            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest cd /home/coder/work && /opt/conda/bin/papermill /home/coder/work/test/test.ipynb /home/coder/work/test-output.ipynb
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
