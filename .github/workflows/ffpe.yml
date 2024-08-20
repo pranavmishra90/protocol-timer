@@ -48,4 +48,4 @@ jobs:
       
       - name: Run the FFPE Protocol with papermill
         run: |
-            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill test/test.ipynb ./papermill/output/test.ipynb
+            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill test/test.ipynb test-output.ipynb
