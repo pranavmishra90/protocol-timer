@@ -1,7 +1,10 @@
-name: FFPE Protocol
+name: Testing Protocol Timer
 
 on:
   workflow_dispatch:
+  push:
+    branch:
+      - main
     
 jobs:
   build-test-and-push:
