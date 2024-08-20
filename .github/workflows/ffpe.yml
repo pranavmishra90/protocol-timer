@@ -12,6 +12,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Docker cache directory
+        id: cache-docker
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.docker-cache
+          key: ${{ runner.os }}-docker-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-docker-
+
+      - name: Load cached Docker layers
+        if: steps.cache-docker.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p /tmp/.docker-cache
+          docker load --input /tmp/.docker-cache/image.tar || true
+
+      - name: Pull Docker image
+        run: docker pull pranavmishra90/facsimilab-main:latest
+
+      - name: Save Docker image to cache
+        if: steps.cache-docker.outputs.cache-hit != 'true'
+        run: |
+          docker save pranavmishra90/facsimilab-main:latest > /tmp/.docker-cache/image.tar
+
+
       - name: PWD
         run: pwd
 
@@ -20,4 +44,4 @@ jobs:
       
       - name: Run the FFPE Protocol with papermill
         run: |
-            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill protocols/histology/FFPE.ipynb /tmp/FFPE-run.ipynb
+            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill test/test.ipynb ./papermill/output/test.ipynb
