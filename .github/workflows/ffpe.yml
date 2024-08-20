@@ -3,8 +3,9 @@ name: Testing Protocol Timer
 on:
   workflow_dispatch:
   push:
-    branch:
+    branches:
       - main
+      - develop
     
 jobs:
   protocol-timer-test:
@@ -15,22 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Docker cache directory
-        id: cache-docker
-        uses: actions/cache@v3
-        with:
-          path: /tmp/.docker-cache
-          key: ${{ runner.os }}-docker-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-docker-
-
-      - name: Load cached Docker layers
-        if: steps.cache-docker.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p /tmp/.docker-cache
-          mkdir -p ./papermill/output
-          docker load --input /tmp/.docker-cache/image.tar || true
-
       - name: Pull Docker image
         run: docker pull pranavmishra90/facsimilab-main:latest
 
@@ -38,7 +23,6 @@ jobs:
         if: steps.cache-docker.outputs.cache-hit != 'true'
         run: |
           docker save pranavmishra90/facsimilab-main:latest > /tmp/.docker-cache/image.tar
-
 
       - name: PWD
         run: pwd
@@ -48,4 +32,4 @@ jobs:
       
       - name: Run the FFPE Protocol with papermill
         run: |
-            docker run --rm -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest /opt/conda/bin/papermill test/test.ipynb test-output.ipynb
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work pranavmishra90/facsimilab-main:latest cd /home/coder/work && /opt/conda/bin/papermill /home/coder/work/test/test.ipynb /home/coder/work/test-output.ipynb
