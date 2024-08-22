@@ -41,7 +41,10 @@ jobs:
           MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
         run: |
             echo Value of TEST_WEBHOOK: $TEST_WEBHOOK
-            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
+            echo value of MATRIX_WEBHOOK: $MATRIX_WEBHOOK
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest ls /home/coder/work/
+
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest bash /home/coder/work/protocol-timer/test/run-test.sh 
 
       - name: Write to workflow job summary
         run: |
