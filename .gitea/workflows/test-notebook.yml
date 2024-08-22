@@ -24,7 +24,9 @@ jobs:
         run: echo "$GITHUB_WORKSPACE"
 
       - name: Get the current working directory
-        run: pwd
+        run: |
+            pwd
+            ls -lahg $(pwd)
       
       - name: Print the env variables
         env: # Or as an environment variable
