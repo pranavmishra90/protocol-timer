@@ -21,8 +21,20 @@ jobs:
 
       - name: Workspace variable
         run: echo "$GITHUB_WORKSPACE"
+
+      - name: Get the current working directory
+        run: pwd
       
-      - name: Run the FFPE Protocol with papermill
+      - name: Print the env variables
+        env: # Or as an environment variable
+          TEST_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
+          MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
+        run: |
+            echo 'Value of TEST_WEBHOOK: $TEST_WEBHOOK'
+            echo 'Value of MATRIX_WEBHOOK $MATRIX_WEBHOOK'
+            $MATRIX_WEBHOOK
+      
+      - name: Run the Test Notebook
         env: # Or as an environment variable
           TEST_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
           MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
