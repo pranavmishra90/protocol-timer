@@ -1,0 +1,56 @@
+name: Testing Protocol Timer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+      - gitea
+    
+jobs:
+  protocol-timer-test:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Pull Docker image
+        run: docker pull pranavmishra90/facsimilab-main:latest
+
+      - name: Workspace variable
+        run: echo "$GITHUB_WORKSPACE"
+
+      - name: Get the current working directory
+        run: |
+            pwd
+            ls -lahg $(pwd)
+      
+      - name: Print the env variables
+        env: # Or as an environment variable
+          TEST_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
+          MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
+        run: |
+            echo Value of TEST_WEBHOOK: $TEST_WEBHOOK
+            echo Value of MATRIX_WEBHOOK $MATRIX_WEBHOOK
+            echo testing$MATRIX_WEBHOOK
+      
+      - name: Run the Test Notebook
+        env: # Or as an environment variable
+          TEST_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
+          MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
+        run: |
+            echo Value of TEST_WEBHOOK: $TEST_WEBHOOK
+            echo value of MATRIX_WEBHOOK: $MATRIX_WEBHOOK
+            docker run --rm --user 1000:1000 -v $(pwd):/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest  /usr/bin/find /home/coder -type f
+            docker run --rm --user 1000:1000 -v /workspace/Dr.PranavMishra/protocol-timer:/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest  /usr/bin/find /home/coder -type d
+            docker run --rm --user 1000:1000 -v $(pwd):/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
+
+      - name: Write to workflow job summary
+        run: |
+            header="# Protocol Timer Testing "
+            echo "$header" > test/job_summary.md
+            echo "Check the [outgoing webhooks](https://webhook.drpranavmishra.com/#!/f9cfa63f-805e-491d-9e4d-b24d92cf5da0/794312d9-d778-4a43-81e8-1794ae57ae99/1)" >> test/job_summary.md
+            cat test/job_summary.md >> $GITHUB_STEP_SUMMARY

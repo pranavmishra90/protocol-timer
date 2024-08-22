@@ -2,7 +2,7 @@
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "containerUser": "coder",
-    "workspaceFolder": ["/workspaces", "/home/coder/work"],
+    // "workspaceFolder": ["/workspaces", "/home/coder/work"],
     "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
@@ -20,28 +20,28 @@
             "description": "The discord channel ID"
         }
     },
+    "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "window.title": "Protocol Timer (DevContainer)"
+        
+    }
+    // Keep the container running in the background even after closing VSCode
+    "shutdownAction": "none",
     "customizations": {
         "vscode": {
             "extensions": [
-                "mechatroner.rainbow-csv",
-                "janisdd.vscode-edit-csv",
-                "ms-azuretools.vscode-docker",
-                "ms-python.debugpy",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-toolsai.jupyter",
-                "ms-toolsai.jupyter-keymap",
-                "ms-toolsai.jupyter-renderers",
-                "ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"mechatroner.rainbow-csv",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-powertoys"
             ]
         }
     },
-    "shutdownAction": "none",
-    "postCreateCommand": [
-        "/bin/bash"
-    ],
+    // "postCreateCommand": [
+    //     "tail -F anything"
+    // ],
     "postAttachCommand": {
-        "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
+        "server": "/bin/bash ./test/run-test.sh"
         
     }
 }
