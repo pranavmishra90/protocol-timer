@@ -2,7 +2,7 @@
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "containerUser": "coder",
-    "workspaceFolder": ["/workspaces", "/home/coder/work"],
+    // "workspaceFolder": ["/workspaces", "/home/coder/work"],
     "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
@@ -20,31 +20,28 @@
             "description": "The discord channel ID"
         }
     },
+    "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "window.title": "Protocol Timer (DevContainer)"
+        
+    }
+    // Keep the container running in the background even after closing VSCode
+    "shutdownAction": "none",
     "customizations": {
-        // Configure properties specific to VS Code.
         "vscode": {
-            // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
-                "ms-vscode-remote.vscode-remote-extensionpack",
-                "ms-azuretools.vscode-docker",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode",
-                "ms-python.black-formatter",
-                "mechatroner.rainbow-csv",
-                "janisdd.vscode-edit-csv",
-                "ms-python.python",
-                "ms-toolsai.jupyter",
-                "ms-toolsai.vscode-jupyter-powertoys"
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"mechatroner.rainbow-csv",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-powertoys"
             ]
         }
     },
-    "shutdownAction": "none",
-    "postCreateCommand": [
-        "/bin/bash"
-    ],
+    // "postCreateCommand": [
+    //     "tail -F anything"
+    // ],
     "postAttachCommand": {
-        "server": "/usr/bin/micromamba env create --prefix /workspaces/protocol-timer/env -f /workspaces/protocol-timer/environment.yml",
-        "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
+        "server": "/bin/bash ./test/run-test.sh"
         
     }
 }
