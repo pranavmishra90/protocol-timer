@@ -24,7 +24,7 @@
         "python.defaultInterpreterPath": "/opt/conda/bin/python",
         "window.title": "Protocol Timer (DevContainer)"
         
-    }
+    },
     // Keep the container running in the background even after closing VSCode
     "shutdownAction": "none",
     "customizations": {
