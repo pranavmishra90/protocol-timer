@@ -1,0 +1,13 @@
+Step Number,Step Text,Duration,Description,Comment
+0,Protocol created by 10x Genomics,0:00:00,Deparaffinization, (CG000520 Rev B)
+1,Melt paraffin in oven,2:00:00,60C,
+2,Allow slide to cool to room temperature,0:05:00,Room Temperature
+2,Xylene - 1,0:10:00,Room Temperature,
+3,Xylene - 2,0:10:00,Room Temperature,
+5,100% Ethanol - 1,0:03:00,Room Temperature,
+6,100% Ethanol - 2,0:03:00,Room Temperature,
+7,96% Ethanol - 1,0:03:00,Room Temperature,
+8,96% Ethanol - 2,0:03:00,Room Temperature,
+9,70% Ethanol,0:03:00,Room Temperature,
+10,Milli-Q Water,0:00:20,Room Temperature,
+11,Proceed to H&E Staining,0:00:00,Room Temperature,
