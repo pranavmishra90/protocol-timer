@@ -2,7 +2,10 @@
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "containerUser": "coder",
-    "workspaceFolder": ["/workspaces", "/home/coder/work"],
+    "updateRemoteUserUID": true,
+    "workspaceFolder": "/home/coder/work/protocol-timer",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/coder/work/protocol-timer,type=bind,consistency=cached"],
     "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
@@ -20,29 +23,20 @@
             "description": "The discord channel ID"
         }
     },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-vscode-remote.vscode-remote-extensionpack",
-                "ms-azuretools.vscode-docker",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode",
-                "ms-python.black-formatter",
-                "mechatroner.rainbow-csv",
-                "janisdd.vscode-edit-csv",
-                "ms-python.python",
-                "ms-toolsai.jupyter",
-                "ms-toolsai.vscode-jupyter-powertoys"
-            ]
-        }
-    },
+    "extensions": [
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "ms-python.black-formatter",
+        "mechatroner.rainbow-csv",
+        "janisdd.vscode-edit-csv",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-powertoys"
+    ],
     "shutdownAction": "none",
     "postCreateCommand": [
         "/bin/bash"
-    ],
-    "postAttachCommand": {
-        "server": "/usr/bin/micromamba env create --prefix /workspaces/protocol-timer/env -f /workspaces/protocol-timer/environment.yml",
-        "server": "echo 'Create a python environment with `mamba env create --prefix ./env -f ./environment.yml` and activate it with `mamba activate ./env`'"
-        
-    }
+    ]
 }
