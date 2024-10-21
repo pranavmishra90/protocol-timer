@@ -19,19 +19,20 @@ jobs:
       - name: Pull Docker image
         run: docker pull pranavmishra90/facsimilab-main:latest
 
-      - name: PWD
-        run: pwd
-
       - name: Workspace variable
         run: echo "$GITHUB_WORKSPACE"
       
       - name: Run the FFPE Protocol with papermill
+        env: # Or as an environment variable
+          TEST_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
+          MATRIX_WEBHOOK: ${{ secrets.MATRIX_WEBHOOK }}
         run: |
-            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=$MATRIX_WEBHOOK -e TEST_WEBHOOK=$TEST_WEBHOOK pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
+            echo 'Value of TEST_WEBHOOK: $TEST_WEBHOOK'
+            docker run --rm --user root -v $GITHUB_WORKSPACE:/home/coder/work -e MATRIX_WEBHOOK=${{ secrets.MATRIX_WEBHOOK }} -e TEST_WEBHOOK=${{ secrets.TEST_WEBHOOK }} pranavmishra90/facsimilab-main:latest bash /home/coder/work/test/run-test.sh 
 
       - name: Write to workflow job summary
         run: |
             header="# Protocol Timer Testing "
             echo "$header" > test/job_summary.md
-            echo "Check the [outgoing webhooks](https://webhook.site/#!/view/5e2673f1-175c-45fc-a195-f0505e97d0b6/eae09074-c0c8-4835-bcdb-f365b4af6022/1)" >> test/job_summary.md
+            echo "Check the [outgoing webhooks](https://webhook.drpranavmishra.com/#!/f9cfa63f-805e-491d-9e4d-b24d92cf5da0/794312d9-d778-4a43-81e8-1794ae57ae99/1)" >> test/job_summary.md
             cat test/job_summary.md >> $GITHUB_STEP_SUMMARY

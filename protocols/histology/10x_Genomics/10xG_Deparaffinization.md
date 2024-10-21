@@ -1,14 +1,10 @@
-# Deparaffinization Protocol
-
-**Pranav Kumar Mishra**  
-Department of Surgery and Orthopedic Surgery  
-Laboratories of Alfonso Torquati and Anna Spagnoli  
-Rush University, Chicago, IL, USA  
+# Deparaffinization Protocol - 10x Genomics
 
 ## Overview
 
 This is a protocol for preparing slides using a formalin fixed, paraffin embedded (FFPE) section. These slides will be used for various protocols, including:
 
 - Hematoxylin and Eosin
-- Immunohistochemistry
 - Spatial Transcriptomics
+
+This protocol was adapted from 10x Genomics document **CG000520 Rev B**

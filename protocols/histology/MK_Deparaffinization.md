@@ -12,3 +12,12 @@ This is a protocol for preparing slides using a formalin fixed, paraffin embedde
 - Hematoxylin and Eosin
 - Immunohistochemistry
 - Spatial Transcriptomics
+
+
+The protocol was originally written by Michael Kluppel and has been modified with the following changes for the BFGI project
+
+
+### Changes
+
+(none)
+

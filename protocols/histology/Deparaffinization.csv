@@ -1,18 +1,11 @@
 Step Number,Step Text,Duration,Description,Comment
-0,Protocol created by Michael Kluppel,0:00:00,Immunofluorescence protocol - paraffin sections,
-1,Vacuum oven,1:00:00,50C,Can remain in the vacuum oven for up to 5 hours
-2,Xylene,0:05:00,Room Temperature,
-3,Xylene,0:05:00,Room Temperature,
+1,Melt paraffin in oven,1:00:00,60C,
+2,Xylene - 1,0:05:00,Room Temperature,
+3,Xylene - 2,0:05:00,Room Temperature,
 4,50% Xylene / 50% Ethanol,0:05:00,Room Temperature,
 5,100% Ethanol - 1,0:05:00,Room Temperature,
 6,100% Ethanol - 2,0:05:00,Room Temperature,
 7,95% Ethanol,0:05:00,Room Temperature,
 8,75% Ethanol,0:05:00,Room Temperature,
 9,50% Ethanol,0:05:00,Room Temperature,
-10,PBS - 1,0:05:00,Room Temperature,
-11,PBS - 2,0:05:00,Room Temperature,
-12,PBS - 3,0:05:00,Room Temperature,
-13,0.1% Triton X-100 in PBS,0:20:00,Room Temperature,Tissue permeabilization
-14,PBS - 1,0:05:00,Room Temperature,
-15,PBS - 2,0:05:00,Room Temperature,
-16,PBS - 3,0:05:00,Room Temperature,
+10,ddH2O,0:05:00,Room Temperature,

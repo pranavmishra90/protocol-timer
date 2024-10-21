@@ -2,7 +2,6 @@
 
 cd /home/coder/work
 
-
 # Create a tokens.secrets file
 FILE="/home/coder/work/protocols/test-tokens.secrets"
 
@@ -15,7 +14,7 @@ channel_id=1234567890_your_channel_id_number_here
 
 [matrix]
 
-webhook=https://webhook.site/5e2673f1-175c-45fc-a195-f0505e97d0b6
+webhook=https://webhook.drpranavmishra.com/f9cfa63f-805e-491d-9e4d-b24d92cf5da0
 EOL
 
 echo "File $FILE created successfully."
