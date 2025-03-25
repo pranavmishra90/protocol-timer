@@ -23,21 +23,28 @@
             "description": "The discord channel ID"
         }
     },
-    "extensions": [
-        "ms-vscode-remote.vscode-remote-extensionpack",
-        "ms-azuretools.vscode-docker",
-        "eamodio.gitlens",
-        "esbenp.prettier-vscode",
-        "ms-python.black-formatter",
-        "mechatroner.rainbow-csv",
-        "janisdd.vscode-edit-csv",
-        "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.vscode-jupyter-powertoys"
-    ],
+    "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "window.title": "Protocol Timer (DevContainer)"
+        
+    },
+    // Keep the container running in the background even after closing VSCode
     "shutdownAction": "none",
-    "postCreateCommand": [
-        "/bin/bash"
-    ]
-
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"mechatroner.rainbow-csv",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-powertoys"
+            ]
+        }
+    },
+    // "postCreateCommand": [
+    //     "tail -F anything"
+    // ],
+    "postAttachCommand": {
+        "server": "/bin/bash ./test/run-test.sh"
+        
+    }
 }
