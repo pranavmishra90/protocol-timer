@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.3.0 (2025-03-25)
+
+### Chore
+
+* chore: merge changes from gitea branch (#8) ([`1e78b98`](https://github.com/pranavmishra90/protocol-timer/commit/1e78b9842e4795c4ef298e552d4fda7686a5bbe1))
+
+### Unknown
+
+* Merge branch &#39;main&#39; into gitea ([`82e9d95`](https://github.com/pranavmishra90/protocol-timer/commit/82e9d9540ca6a3bdf36b854ba7db4a34c3b89489))
+
 ## v0.2.0 (2024-10-21)
 
 ### Chore
@@ -8,9 +18,11 @@
 
 * chore: rename protocol ([`1bb9c14`](https://github.com/pranavmishra90/protocol-timer/commit/1bb9c14e3af7b1cc0026079db5c8acf7f8705bc6))
 
-### Feature
+* chore: change chmod to 755 ([`61b0ab4`](https://github.com/pranavmishra90/protocol-timer/commit/61b0ab4adb6c40fb6052896a8251d4a86e46cb38))
 
-* feat: add extensions, remove unnecessary mamba env create command ([`4a9e9ab`](https://github.com/pranavmishra90/protocol-timer/commit/4a9e9aba6e5d630487d7924aecdfa2ec7c45514d))
+* chore: rename ([`2b1c9c1`](https://github.com/pranavmishra90/protocol-timer/commit/2b1c9c10493e4415d8b833b0294120f6377798e5))
+
+### Feature
 
 * feat: add semantic versioning ([`c35a2b7`](https://github.com/pranavmishra90/protocol-timer/commit/c35a2b75a917464dc6c2b9593772506e39c03d39))
 
@@ -22,11 +34,15 @@
 
 * feat: using facsimilab-main ([`ab03051`](https://github.com/pranavmishra90/protocol-timer/commit/ab030515dd6d8384c2197e072a030695fbc64eff))
 
+* feat: add intermediate steps to debug ([`82e51c2`](https://github.com/pranavmishra90/protocol-timer/commit/82e51c2fc71c6a4eaf9b615ac66100ff3cabe501))
+
 * feat: revert to self-hosted webhooks testing ([`5b64ea9`](https://github.com/pranavmishra90/protocol-timer/commit/5b64ea9519d16e5f4c124672bde0fff428c78ed9))
 
 * feat: add step to pass in all env variables ([`0753463`](https://github.com/pranavmishra90/protocol-timer/commit/07534636998e1202fa78911b814870d8107bbd05))
 
 * feat: change to self-hosted webhook server ([`686f63e`](https://github.com/pranavmishra90/protocol-timer/commit/686f63eed293e28345ed5c6c06b7de5dd277d10c))
+
+* feat: add extensions, remove unnecessary mamba env create command ([`4a9e9ab`](https://github.com/pranavmishra90/protocol-timer/commit/4a9e9aba6e5d630487d7924aecdfa2ec7c45514d))
 
 * feat: add gh action badge ([`94b8c9b`](https://github.com/pranavmishra90/protocol-timer/commit/94b8c9bb2391090a7c6274c4e6827a36c7831115))
 
@@ -54,6 +70,12 @@
 
 * fix: deparaffinization protocol with devcontainer ([`a9558d7`](https://github.com/pranavmishra90/protocol-timer/commit/a9558d74706528b34391b0977cca0546b3d4f2af))
 
+* fix: missing comma preventing &#34;shutdownAction&#34; ([`e347272`](https://github.com/pranavmishra90/protocol-timer/commit/e347272119297f4cbc4302d66d909fa98d4454f8))
+
+* fix: improve NaN handling in the text of the &#34;combined&#34; message ([`929d74b`](https://github.com/pranavmishra90/protocol-timer/commit/929d74b66d9bca4217b0b60eb09f0401b612920f))
+
+* fix: using new webhook ([`bf56d0e`](https://github.com/pranavmishra90/protocol-timer/commit/bf56d0eafc401272128bc1c3beff05330e6b3754))
+
 * fix: testing another way of passing in secrets ([`2d73fb2`](https://github.com/pranavmishra90/protocol-timer/commit/2d73fb2d3f8b8158a173b3540800aaacdc6ae15c))
 
 * fix: run command ([`6ee939f`](https://github.com/pranavmishra90/protocol-timer/commit/6ee939f8906b0429801bd86c88e8aeb7364901ea))
@@ -80,7 +102,35 @@
 
 * Merge branch &#39;main&#39; into develop ([`bc53bf5`](https://github.com/pranavmishra90/protocol-timer/commit/bc53bf5f491fd470124c59bb515189b0fc6299d0))
 
+* add quotes ([`9f33eeb`](https://github.com/pranavmishra90/protocol-timer/commit/9f33eeb8895e5dd7998a9394846e7e0f397d35ae))
+
+* Merge branch &#39;gitea&#39; of https://gitea.mishracloud.com/Dr.PranavMishra/protocol-timer into gitea ([`95a94d3`](https://github.com/pranavmishra90/protocol-timer/commit/95a94d321d79d9beb062974b42f319fc4e75bbc1))
+
+* direct mount ([`56e7176`](https://github.com/pranavmishra90/protocol-timer/commit/56e71768027d55a5618b70be2ef4debc645cb223))
+
+* Update .gitea/workflows/test-notebook.yml ([`926d1e0`](https://github.com/pranavmishra90/protocol-timer/commit/926d1e0bee2f1daade4bbc68da74b568322ff973))
+
+* trying to get the bind mount ([`76a3508`](https://github.com/pranavmishra90/protocol-timer/commit/76a35088ab888b4fa9cc3efcdf056a70ebf2c7ff))
+
+* Update .gitea/workflows/test-notebook.yml ([`850a38b`](https://github.com/pranavmishra90/protocol-timer/commit/850a38b75c5d8ff1e46c1d39f633c5518a66e260))
+
+* try to improve mounting ([`b58c45b`](https://github.com/pranavmishra90/protocol-timer/commit/b58c45b5c3e33da80f3a12c4daa578b38d5b83f1))
+
+* Update .gitea/workflows/test-notebook.yml ([`7fe5b18`](https://github.com/pranavmishra90/protocol-timer/commit/7fe5b1813161895abe4f498a417eea9a1baddd89))
+
+* limit action inits ([`55836fa`](https://github.com/pranavmishra90/protocol-timer/commit/55836fa153fe57605041f6ab1349158a23f22519))
+
+* remove quotes ([`72f4101`](https://github.com/pranavmishra90/protocol-timer/commit/72f41017c6077e6d6056d8caaa7b320f03917044))
+
+* add gitea branch ([`4140a2f`](https://github.com/pranavmishra90/protocol-timer/commit/4140a2f899e15d4555adea269eb522e7aaeeba08))
+
+* add more action conditions ([`77f7909`](https://github.com/pranavmishra90/protocol-timer/commit/77f79099e31864d00bb491cb9f1be060918d71f1))
+
+* testing gitea actions ([`92bb38f`](https://github.com/pranavmishra90/protocol-timer/commit/92bb38fa621a9e79d56b2c85e4b48a7f1a7a4d5a))
+
 * Merge branch &#39;develop&#39; ([`6e24209`](https://github.com/pranavmishra90/protocol-timer/commit/6e242097e3a0dd6b70685da54fa8cc05a07e0763))
+
+* Merge branch &#39;main&#39; into develop ([`718e97c`](https://github.com/pranavmishra90/protocol-timer/commit/718e97c6c8e6a6979ff5f5683fbc172a7c03ad6a))
 
 * Add devcontainer, GH Actions, Tests (#5)
 
@@ -107,8 +157,6 @@
 * feat: create test tokens file and job summary
 
 * feat: add gh action badge ([`69647ae`](https://github.com/pranavmishra90/protocol-timer/commit/69647aece544f27e229a0dc1aea3844668596e0d))
-
-* Merge branch &#39;main&#39; into develop ([`718e97c`](https://github.com/pranavmishra90/protocol-timer/commit/718e97c6c8e6a6979ff5f5683fbc172a7c03ad6a))
 
 * Create a static FFPE protocol and update devcontainer (#4)
 
