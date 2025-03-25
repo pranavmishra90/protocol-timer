@@ -1,0 +1,31 @@
+name: Semantic Version Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  semvar-release:
+    runs-on: ubuntu-latest
+    concurrency: semvar-release
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          show-progress: true
+
+      - name: Python Semantic Release
+        uses: python-semantic-release/python-semantic-release@v9.8.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_email: "62562712+pranavmishra90@users.noreply.github.com"
+          ssh_private_signing_key: ${{ secrets.AUTOMATED_SIGNING_KEY }}
+          ssh_public_signing_key: ${{ secrets.AUTOMATED_SIGNING_PUBKEY }}
+          skip-build: "true"

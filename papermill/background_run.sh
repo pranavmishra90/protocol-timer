@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# Background run of the Jupyter notebook using Papermill in a dockerized environment with FacsimiLab
+
 # Setup
 #------------------------
-cd /home/pranav/work/pranavmishra90/protocol-timer
+cd /home/coder/work/protocol-timer
 
-source /home/pranav/miniforge3/bin/activate ./env
+source /opt/conda/bin/activate
 
 # Default notebook path
 default_notebook_path="protocols/histology/FFPE.ipynb"
@@ -45,5 +47,3 @@ echo 'Ended at ' $(date +"%F-%H-%M-%S")
 echo "It took $((($(date +%s)-T) / 60)) minutes to complete" 
 echo ""
 echo "Done."
-
-## Citation for Papermill: Tange, O. (2023, May 22). GNU Parallel 20230522 ('Charles'). Zenodo. https://doi.org/10.5281/zenodo.7958356

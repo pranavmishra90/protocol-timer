@@ -2,7 +2,10 @@
     "image": "pranavmishra90/facsimilab-main:latest",
     "name": "protocol-timer",
     "containerUser": "coder",
-    // "workspaceFolder": ["/workspaces", "/home/coder/work"],
+    "updateRemoteUserUID": true,
+    "workspaceFolder": "/home/coder/work/protocol-timer",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/coder/work/protocol-timer,type=bind,consistency=cached"],
     "updateRemoteUserUID": true,
     "hostRequirements": {
         "cpus": 1,
