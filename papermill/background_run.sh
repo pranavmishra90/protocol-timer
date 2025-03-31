@@ -9,7 +9,7 @@ cd /home/coder/work/protocol-timer
 source /opt/conda/bin/activate
 
 # Default notebook path
-default_notebook_path="protocols/histology/FFPE.ipynb"
+default_notebook_path="protocols/histology/Deparaffinization.ipynb"
 
 # Prompt user for the notebook file path
 echo "Available notebooks under ./protocols directory:"

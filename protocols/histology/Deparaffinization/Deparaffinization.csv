@@ -1,0 +1,15 @@
+Step Number,Step Text,Duration,Description,Comment
+0,Protocol created by Pranav Mishra,0:00:00,Deparaffinization,
+1,Melt paraffin in oven,2:00:00,60C,Slides can be angled in a slide holding rack allowing the paraffin to drip down the edge of the slide
+2,Allow slide to cool to room temperature,0:01:00,Room Temperature,
+3,Xylene - 1,0:05:00,Room Temperature,
+4,Xylene - 2,0:05:00,Room Temperature,
+5,Xylene + 100% EtOH (1:1 v/v),0:05:00,Room Temperature,Optional step
+6,100% Ethanol - 1,0:05:00,Room Temperature,
+7,100% Ethanol - 2,0:05:00,Room Temperature,
+8,96% Ethanol - 1,0:05:00,Room Temperature,
+9,96% Ethanol - 2,0:05:00,Room Temperature,
+10,70% Ethanol,0:05:00,Room Temperature,
+10,50% Ethanol,0:05:00,Room Temperature,
+11,Milli-Q Water,0:05:00,Room Temperature,Alternative - PBS
+12,Proceed to H&E Staining,0:00:00,Room Temperature,
