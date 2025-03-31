@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.4.0 (2025-03-31)
+
+### Feature
+
+* feat: deparaffinization run for prrx1 experiment (#9) ([`f7ab663`](https://github.com/pranavmishra90/protocol-timer/commit/f7ab663c54831bf03f806ec703ac1fa4647016f9))
+
+* feat: deparaffinization run for prrx1 experiment ([`9c8c06a`](https://github.com/pranavmishra90/protocol-timer/commit/9c8c06aa0535221f89f61724b6bff1a3c76b24e8))
+
 ## v0.3.0 (2025-03-25)
 
 ### Chore
