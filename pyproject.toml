@@ -1,3 +1,23 @@
+[project]
+name = "protocol-timer"
+version = "0.4"
+readme = "readme.md"
+authors = [
+    { name = "Pranav Kumar Mishra", email = "62562712+pranavmishra90@users.noreply.github.com" }
+]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "jupyter>=1.1.1",
+    "jupyter-cache>=1.0.1",
+    "markdown>=3.10.2",
+    "nbformat>=5.10.4",
+    "nbstripout>=0.9.1",
+    "numpy>=2.4.2",
+    "pandas>=3.0.1",
+    "tqdm>=4.67.3",
+]
+
+
 [tool.semantic_release]
 assets = []
 build_command_env = []

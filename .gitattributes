@@ -1,0 +1,6 @@
+# Strip output from Jupyter notebooks
+#------------------------------------------------
+protocols/**/*.ipynb filter=nbstripout
+*.ipynb filter=nbstripout
+*.zpln filter=nbstripout
+*.ipynb diff=ipynb

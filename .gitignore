@@ -1,3 +1,21 @@
-/env/*
+# Secrets stored as environments or secrets files
+*.env
 *.secrets
-**/__pycache__
+s3.bat
+minio.bat
+**/*shell_secrets*
+
+# Code
+**/.jupyter_cache/
+**/__pycache__/
+**/.ipynb_checkpoints/
+**/papermill_tmp
+/deploy/jupyter/.jupyter
+
+
+# Local environment
+env/*
+!env/readme.md
+.venv
+tmp.venv
+uv.lock
