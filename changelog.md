@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.5.0 (2026-02-24)
+
+### Feature
+
+* feat: add python venv using uv ([`cccccc7`](https://github.com/pranavmishra90/protocol-timer/commit/cccccc746704ddf6bfd1a7552d1790ad02898d01))
+
+### Fix
+
+* fix: regex substitution ([`7da4c13`](https://github.com/pranavmishra90/protocol-timer/commit/7da4c138a565e5df4586b504764653a32d70c383))
+
 ## v0.4.0 (2025-03-31)
 
 ### Feature
